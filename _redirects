@@ -1,0 +1,8 @@
+# Cloudflare Pages — Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# SPA fallback (uncomment if using client-side routing)
+# /*    /index.html   200
+
+# WWW redirect (optional — configure in Cloudflare dashboard instead)
+# https://www.giovanidelivery.com.br/*  https://giovanidelivery.com.br/:splat  301
