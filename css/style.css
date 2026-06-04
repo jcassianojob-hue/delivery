@@ -7,10 +7,14 @@
 
 /* ── TOKENS ── */
 :root {
-  --orange:        #FF5C1A;
-  --orange-hover:  #E04A0E;
-  --orange-dim:    rgba(255, 92, 26, 0.12);
-  --orange-border: rgba(255, 92, 26, 0.28);
+  --orange:        #E8000F;
+  --orange-hover:  #C20009;
+  --orange-dim:    rgba(232, 0, 15, 0.12);
+  --orange-border: rgba(232, 0, 15, 0.30);
+
+  --yellow:        #F5C518;
+  --yellow-dim:    rgba(245, 197, 24, 0.13);
+  --yellow-border: rgba(245, 197, 24, 0.35);
 
   --dark:   #0C0C0C;
   --dark-2: #141414;
@@ -424,6 +428,7 @@ h1, h2, h3, h4 {
 
 /* ── UTILITIES ── */
 .text-orange { color: var(--orange); }
+.text-yellow { color: var(--yellow); }
 .text-muted  { color: var(--muted); }
 .mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
