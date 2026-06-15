@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ebook Giovani | Gestão de Delivery — O guia completo para donos de restaurante dominarem o iFood, 99Food e Keeta." />
+  <meta name="theme-color" content="#0C0C0C" />
+  <title>Ebook | Giovani — Gestão de Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+
+    /* ── HERO EBOOK ── */
+    .ebook-hero {
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .ebook-hero::before {
+      content: '';
+      position: absolute; top: -20%; right: -10%;
+      width: min(600px, 100vw); height: min(600px, 100vw);
+      background: radial-gradient(circle, rgba(232,0,15,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .ebook-hero-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      position: relative; z-index: 1;
+    }
+
+    /* ebook cover mockup */
+    .ebook-cover-wrap {
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .ebook-cover {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--dark-3) 0%, #1a0a0a 100%);
+      border: 1px solid var(--orange-border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 6px 6px 0 rgba(232,0,15,0.2), 12px 12px 0 rgba(232,0,15,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ebook-cover::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
+    }
+
+    .ebook-cover-tag {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--orange);
+      border: 1px solid var(--orange-border);
+      padding: 0.2rem 0.6rem; border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .ebook-cover-title {
+      font-size: 1.3rem; font-weight: 700;
+      line-height: 1.2; letter-spacing: -0.02em;
+      color: var(--text); margin-bottom: 0.75rem;
+    }
+
+    .ebook-cover-title span { color: var(--orange); }
+
+    .ebook-cover-sub {
+      font-size: 0.75rem; color: var(--muted); line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .ebook-cover-author {
+      font-size: 0.7rem; font-weight: 600; color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem; width: 100%;
+    }
+
+    /* platform logos on cover */
+    .ebook-cover-platforms {
+      display: flex; gap: 0.5rem; align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .ebook-cover-platforms img {
+      height: 14px; width: auto;
+      filter: brightness(0) invert(0.6);
+    }
+
+    /* floating badge */
+    .ebook-cover-badge {
+      position: absolute;
+      top: -12px; right: -12px;
+      background: var(--yellow);
+      color: #000;
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 0.6rem; font-weight: 700;
+      text-align: center; line-height: 1.3;
+      box-shadow: 0 4px 16px rgba(245,197,24,0.4);
+    }
+
+    .ebook-cover-badge strong { font-size: 0.95rem; display: block; }
+
+    /* ── EBOOK CONTENT ── */
+    .ebook-content { flex: 1; }
+
+    .ebook-pretitle {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--orange); margin-bottom: 0.75rem;
+    }
+
+    .ebook-title {
+      font-size: clamp(1.9rem, 6vw, 3.4rem);
+      line-height: 1.08; letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .ebook-desc {
+      font-size: 0.975rem; color: var(--muted);
+      line-height: 1.8; margin-bottom: 1.75rem;
+      max-width: 500px;
+    }
+
+    /* price box */
+    .ebook-price-box {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      max-width: 420px;
+    }
+
+    .ebook-price-from {
+      font-size: 0.8rem; color: var(--muted);
+      text-decoration: line-through; margin-bottom: 0.15rem;
+    }
+
+    .ebook-price-main {
+      display: flex; align-items: flex-end; gap: 0.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .ebook-price-currency { font-size: 1.1rem; font-weight: 600; color: var(--text); padding-bottom: 4px; }
+    .ebook-price-value    { font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1; letter-spacing: -0.03em; }
+    .ebook-price-cents    { font-size: 1.3rem; font-weight: 700; color: var(--text); padding-bottom: 4px; }
+
+    .ebook-price-note {
+      font-size: 0.78rem; color: var(--muted);
+    }
+
+    .ebook-price-note span { color: var(--yellow); font-weight: 600; }
+
+    .ebook-cta-wrap { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .btn-ebook {
+      font-size: 1rem; padding: 0.95rem 2.2rem;
+      border-radius: var(--radius-pill);
+      font-weight: 700; text-align: center;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    }
+
+    .ebook-guarantee {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; color: var(--muted);
+    }
+
+    .ebook-guarantee-icon { font-size: 1.1rem; }
+
+    /* ── WHAT'S INSIDE ── */
+    .inside-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 1rem; margin-top: 2.5rem;
+    }
+
+    .inside-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.2rem; background: var(--dark-2);
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+    }
+
+    .inside-num {
+      font-size: 1.1rem; font-weight: 700; color: var(--yellow);
+      min-width: 28px; line-height: 1.3;
+    }
+
+    .inside-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .inside-desc  { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── FOR WHO ── */
+    .forwho-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .forwho-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.9rem; color: var(--muted); line-height: 1.6;
+    }
+
+    .forwho-check {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(232,0,15,0.12); border: 1px solid var(--orange-border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange); font-size: 0.65rem; flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ── AUTHOR ── */
+    .author-inner {
+      display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;
+    }
+
+    .author-photo {
+      width: 80px; height: 80px;
+      object-fit: cover; object-position: center top;
+      border-radius: 50%;
+      border: 2px solid var(--orange-border);
+      flex-shrink: 0;
+    }
+
+    .author-name  { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .author-role  { font-size: 0.8rem; color: var(--orange); font-weight: 600; margin-bottom: 0.75rem; }
+    .author-bio   { font-size: 0.875rem; color: var(--muted); line-height: 1.8; }
+
+    /* ── CTA BOTTOM ── */
+    .cta-bottom { text-align: center; position: relative; overflow: hidden; }
+    .cta-bottom::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); width: 500px; height: 350px;
+      background: radial-gradient(ellipse, rgba(232,0,15,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .sec-title { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 0.75rem; }
+    .bg-alt    { background: var(--dark-2); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+      width: 52px; height: 52px; border-radius: 50%; background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s; text-decoration: none;
+    }
+    .wa-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
+    .wa-float svg   { width: 28px; height: 28px; fill: #fff; }
+
+    /* ── NAV SOCIAL ICONS ── */
+    .nav-socials { display: none; align-items: center; gap: 0.6rem; }
+    .nav-socials a {
+      width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-socials a:hover { border-color: var(--orange); color: var(--orange); }
+    .nav-socials svg { width: 15px; height: 15px; fill: currentColor; }
+
+    /* ── RESPONSIVE ── */
+    @media (min-width: 640px) {
+      .inside-grid   { grid-template-columns: repeat(2, 1fr); }
+      .nav-socials   { display: flex; }
+    }
+
+    @media (min-width: 900px) {
+      .ebook-hero { padding-top: 8rem; padding-bottom: 5rem; }
+      .ebook-hero-inner { flex-direction: row; align-items: center; gap: 5rem; }
+      .ebook-cover-wrap { max-width: 300px; flex-shrink: 0; margin: 0; }
+      .inside-grid   { grid-template-columns: repeat(2, 1fr); }
+      .author-inner  { flex-direction: row; align-items: flex-start; gap: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5518997632365?text=Olá%20Giovani!%20Quero%20saber%20mais%20sobre%20o%20ebook."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Giovani — Gestão de Delivery">
+        Giovani <span>|</span> <span class="nav-logo-sub">Gestão de Delivery</span>
+      </a>
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="/">Home</a>
+        <a href="/#sobre">Sobre</a>
+        <a href="/#servicos">Serviços</a>
+        <a href="/#resultados">Resultados</a>
+      </nav>
+      <div class="nav-socials">
+        <a href="https://www.instagram.com/giovani.ifood/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/5518997632365" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+      <a href="#comprar" class="btn btn-primary nav-cta">Comprar ebook</a>
+      <button class="nav-burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+      <a href="/">Home</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="/#servicos">Serviços</a>
+      <a href="#comprar">Comprar ebook</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ══ HERO EBOOK ══ -->
+    <section class="ebook-hero section" aria-label="Apresentação do ebook">
+      <div class="container">
+        <div class="ebook-hero-inner">
+
+          <!-- cover mockup -->
+          <div class="ebook-cover-wrap reveal">
+            <div class="ebook-cover">
+              <div class="ebook-cover-tag">Ebook</div>
+              <div class="ebook-cover-title">
+                Do Zero ao <span>Topo</span> das Plataformas
+              </div>
+              <p class="ebook-cover-sub">O guia definitivo para donos de restaurante dominarem o delivery</p>
+              <div class="ebook-cover-platforms">
+                <img src="../assets/logo-ifood.png" alt="iFood" />
+                <img src="../assets/logo-99food.png" alt="99Food" />
+                <img src="../assets/logo-keeta.png" alt="Keeta" />
+              </div>
+              <div class="ebook-cover-author">por Giovani | Gestão de Delivery</div>
+            </div>
+            <div class="ebook-cover-badge">
+              <strong>NOVO</strong>
+              2026
+            </div>
+          </div>
+
+          <!-- content -->
+          <div class="ebook-content">
+            <p class="ebook-pretitle">Ebook exclusivo</p>
+            <h1 class="ebook-title">
+              Do Zero ao <span class="text-orange">Topo</span> das Plataformas
+            </h1>
+            <p class="ebook-desc">
+              O guia prático que reúne tudo que aprendi gerenciando mais de 80 restaurantes no iFood, 99Food e Keeta. Estratégias reais, sem enrolação, para você vender mais e parar de depender de sorte.
+            </p>
+
+            <div class="ebook-price-box" id="comprar">
+              <p class="ebook-price-from">De R$ 97,00</p>
+              <div class="ebook-price-main">
+                <span class="ebook-price-currency">R$</span>
+                <span class="ebook-price-value">47</span>
+                <span class="ebook-price-cents">,00</span>
+              </div>
+              <p class="ebook-price-note">
+                Pagamento único — acesso imediato. <span>Oferta por tempo limitado.</span>
+              </p>
+            </div>
+
+            <div class="ebook-cta-wrap">
+              <a href="LINK_PAGAMENTO_AQUI" class="btn btn-primary btn-ebook" target="_blank" rel="noopener noreferrer">
+                Quero o ebook agora →
+              </a>
+              <div class="ebook-guarantee">
+                <span class="ebook-guarantee-icon">🔒</span>
+                <span>Compra segura — se não gostar em 7 dias, devolvemos seu dinheiro.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ O QUE VOCÊ VAI APRENDER ══ -->
+    <section class="section bg-alt" aria-labelledby="inside-title">
+      <div class="container">
+        <p class="section-label">Conteúdo do ebook</p>
+        <h2 class="sec-title" id="inside-title">O que você vai aprender.</h2>
+        <p class="text-muted" style="font-size:0.925rem; max-width:480px; line-height:1.8;">
+          Conteúdo direto ao ponto, baseado em experiência real com mais de 80 restaurantes.
+        </p>
+        <div class="inside-grid">
+          <div class="inside-item reveal">
+            <div class="inside-num">01</div>
+            <div>
+              <h3 class="inside-title">Como funciona o algoritmo</h3>
+              <p class="inside-desc">Entenda como o iFood, 99Food e Keeta decidem quem aparece primeiro e o que você pode fazer para se destacar.</p>
+            </div>
+          </div>
+          <div class="inside-item reveal">
+            <div class="inside-num">02</div>
+            <div>
+              <h3 class="inside-title">Engenharia de cardápio</h3>
+              <p class="inside-desc">Como montar fotos, descrições e preços que convertem visitas em pedidos e aumentam o ticket médio.</p>
+            </div>
+          </div>
+          <div class="inside-item reveal">
+            <div class="inside-num">03</div>
+            <div>
+              <h3 class="inside-title">Campanhas e cupons que vendem</h3>
+              <p class="inside-desc">Estratégia de campanhas e cupons para atrair novos clientes sem destruir a margem do seu negócio.</p>
+            </div>
+          </div>
+          <div class="inside-item reveal">
+            <div class="inside-num">04</div>
+            <div>
+              <h3 class="inside-title">Gestão de reputação</h3>
+              <p class="inside-desc">Como aumentar suas avaliações, responder críticas e construir uma reputação que atrai mais pedidos.</p>
+            </div>
+          </div>
+          <div class="inside-item reveal">
+            <div class="inside-num">05</div>
+            <div>
+              <h3 class="inside-title">Métricas que importam</h3>
+              <p class="inside-desc">Quais números você precisa acompanhar, como interpretá-los e o que mudar quando os resultados caem.</p>
+            </div>
+          </div>
+          <div class="inside-item reveal">
+            <div class="inside-num">06</div>
+            <div>
+              <h3 class="inside-title">Plano de 90 dias</h3>
+              <p class="inside-desc">Um plano de ação prático para implementar tudo o que aprendeu e ter resultados nos primeiros 3 meses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ PARA QUEM É ══ -->
+    <section class="section" aria-labelledby="forwho-title">
+      <div class="container">
+        <p class="section-label">Para quem é</p>
+        <h2 class="sec-title" id="forwho-title">Este ebook é pra você?</h2>
+        <div class="forwho-list">
+          <div class="forwho-item reveal">
+            <div class="forwho-check">✓</div>
+            <span>Você tem um restaurante no delivery mas as vendas estão estagnadas ou caindo.</span>
+          </div>
+          <div class="forwho-item reveal">
+            <div class="forwho-check">✓</div>
+            <span>Você gasta com anúncios dentro das plataformas mas não vê retorno real.</span>
+          </div>
+          <div class="forwho-item reveal">
+            <div class="forwho-check">✓</div>
+            <span>Você quer entrar no delivery mas não sabe por onde começar sem desperdiçar dinheiro.</span>
+          </div>
+          <div class="forwho-item reveal">
+            <div class="forwho-check">✓</div>
+            <span>Você tem avaliações baixas e não sabe como melhorar sua reputação nas plataformas.</span>
+          </div>
+          <div class="forwho-item reveal">
+            <div class="forwho-check">✓</div>
+            <span>Você quer deixar de depender de achismos e tomar decisões baseadas em dados reais.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ AUTOR ══ -->
+    <section class="section bg-alt" aria-labelledby="autor-title">
+      <div class="container">
+        <p class="section-label">Quem escreveu</p>
+        <h2 class="sec-title" id="autor-title">Sobre o autor.</h2>
+        <div class="author-inner reveal">
+          <img src="../assets/giovani.jpg" alt="Foto de Giovani" class="author-photo" />
+          <div>
+            <h3 class="author-name">Giovani</h3>
+            <p class="author-role">Gestor de Delivery | iFood · 99Food · Keeta</p>
+            <p class="author-bio">
+              Já passei pelos bastidores de mais de 80 restaurantes — dos pequenos negócios de bairro às operações de maior volume. Esse ebook é um compilado de tudo que funcionou de verdade na prática, sem teoria vazia. Meu objetivo é te dar o atalho que eu não tive quando comecei.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ CTA FINAL ══ -->
+    <section class="section cta-bottom" aria-labelledby="cta-ebook-title">
+      <div class="container">
+        <p class="section-label">Garanta o seu</p>
+        <h2 class="sec-title" id="cta-ebook-title">
+          Chega de deixar dinheiro<br>na mesa no delivery.
+        </h2>
+        <p class="text-muted" style="font-size:0.95rem; max-width:420px; margin: 0 auto 2rem; line-height:1.8; text-align:center;">
+          Acesso imediato após a compra. Pague uma vez e tenha o guia para sempre.
+        </p>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+          <a href="LINK_PAGAMENTO_AQUI" class="btn btn-primary btn-ebook" target="_blank" rel="noopener noreferrer">
+            Quero o ebook por R$ 47,00 →
+          </a>
+          <span style="font-size:0.78rem; color:var(--muted);">🔒 Garantia de 7 dias ou seu dinheiro de volta</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Giovani | Gestão de Delivery. Todos os direitos reservados.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/giovani.ifood/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/5518997632365" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+
+</body>
+</html>

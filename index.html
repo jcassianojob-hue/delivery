@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Giovani — Gestor de Delivery especialista em iFood, Rappi e 99Food. Mais de 80 restaurantes atendidos. Aumente suas vendas no delivery com gestão profissional." />
+  <meta name="description" content="Giovani | Gestão de Delivery — Especialista em iFood, 99Food e Keeta. Mais de 80 restaurantes atendidos. Aumente suas vendas no delivery com gestão profissional." />
   <meta name="theme-color" content="#0C0C0C" />
-  <meta property="og:title"       content="Giovani | Gestor de Delivery" />
-  <meta property="og:description" content="Especialista em iFood, Rappi e 99Food. +80 restaurantes atendidos." />
-  <meta property="og:type"        content="website" />
-  <title>Giovani | Gestor de Delivery</title>
+  <meta property="og:title" content="Giovani | Gestão de Delivery" />
+  <meta property="og:description" content="Especialista em iFood, 99Food e Keeta. +80 restaurantes atendidos." />
+  <meta property="og:type" content="website" />
+  <title>Giovani | Gestão de Delivery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,396 +16,278 @@
   <style>
 
     /* ── HERO ── */
-    .hero {
-      padding-top: 5.5rem;
-      padding-bottom: 3.5rem;
-      overflow: hidden;
-    }
-
-    .hero-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
+    .hero { padding-top: 5.5rem; padding-bottom: 3.5rem; overflow: hidden; }
+    .hero-inner { display: flex; flex-direction: column; gap: 2.5rem; }
     .hero-content { flex: 1; }
-
     .hero-title {
       font-size: clamp(2.1rem, 7.5vw, 4.8rem);
-      line-height: 1.06;
-      letter-spacing: -0.03em;
+      line-height: 1.06; letter-spacing: -0.03em;
       margin: 1.25rem 0 1rem;
     }
-
     .hero-desc {
-      font-size: 0.975rem;
-      color: var(--muted);
-      max-width: 460px;
-      line-height: 1.8;
-      margin-bottom: 2rem;
+      font-size: 0.975rem; color: var(--muted);
+      max-width: 460px; line-height: 1.8; margin-bottom: 2rem;
     }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.25rem; }
 
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2.25rem;
-    }
-
-    .platforms-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
+    /* platforms row with logos */
+    .platforms-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; margin-top: 0.25rem; }
     .platforms-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--muted); width: 100%;
     }
+    .platform-logo-pill {
+      border-radius: 10px;
+      padding: 0.42rem 0.85rem;
+      display: flex; align-items: center; justify-content: center;
+      height: 40px; min-width: 90px;
+      transition: transform 0.18s, opacity 0.18s;
+    }
+    .platform-logo-pill:hover { transform: translateY(-2px); opacity: 0.9; }
+    .platform-logo-pill img  { height: 18px; width: auto; display: block; object-fit: contain; }
+    .platform-logo-pill.ifood  { background: #EA1D2C; }
+    .platform-logo-pill.food99 { background: #F8D000; }
+    .platform-logo-pill.keeta  { background: #FFD600; }
 
-    /* hero photo — mobile: full width card */
+    /* hero photo */
     .hero-photo-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 340px;
-      margin: 0 auto;
+      position: relative; width: 100%; max-width: 340px; margin: 0 auto;
     }
-
     .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 20px;
+      content: ''; position: absolute; inset: -2px; border-radius: 20px;
       background: linear-gradient(145deg, var(--orange) 0%, var(--yellow) 100%);
-      z-index: 0;
-      opacity: 0.55;
+      z-index: 0; opacity: 0.55;
     }
-
     .hero-photo {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 18px;
-      display: block;
+      position: relative; z-index: 1; width: 100%;
+      aspect-ratio: 4/5; object-fit: cover; object-position: center top;
+      border-radius: 18px; display: block;
     }
-
-    /* floating badge on photo */
     .photo-badge {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      z-index: 2;
-      background: rgba(12,12,12,0.82);
-      backdrop-filter: blur(10px);
+      position: absolute; bottom: 1rem; left: 1rem; z-index: 2;
+      background: rgba(12,12,12,0.82); backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--border-hover);
-      border-radius: 12px;
-      padding: 0.6rem 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      border: 1px solid var(--border-hover); border-radius: 12px;
+      padding: 0.6rem 0.9rem; display: flex; align-items: center; gap: 0.6rem;
     }
-
     .photo-badge-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--orange-dim);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
+      width: 32px; height: 32px; background: var(--orange-dim);
+      border-radius: 8px; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; flex-shrink: 0;
     }
-
-    .photo-badge-text strong {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.2;
-    }
-
-    .photo-badge-text span {
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    /* glow behind photo */
-    .hero-photo-wrap::after {
-      content: '';
-      position: absolute;
-      top: 10%; right: -30%;
-      width: 280px; height: 280px;
-      background: radial-gradient(circle, rgba(255,92,26,0.18) 0%, transparent 65%);
-      z-index: 0;
-      pointer-events: none;
-    }
+    .photo-badge-text strong { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+    .photo-badge-text span   { font-size: 0.7rem; color: var(--muted); }
 
     /* ── STATS BAR ── */
     .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     }
-
     .stat-item {
-      background: var(--dark-2);
-      padding: 1.6rem 1rem;
-      text-align: center;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: var(--dark-2); padding: 1.6rem 1rem; text-align: center;
+      border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
     }
-
-    .stat-item:nth-child(2n) { border-right: none; }
+    .stat-item:nth-child(2n)        { border-right: none; }
     .stat-item:nth-last-child(-n+2) { border-bottom: none; }
-
     .stat-number {
-      display: block;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--yellow);
-      line-height: 1;
-      letter-spacing: -0.025em;
-      margin-bottom: 0.3rem;
+      display: block; font-size: 2.2rem; font-weight: 700;
+      color: var(--yellow); line-height: 1; letter-spacing: -0.025em; margin-bottom: 0.3rem;
     }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-weight: 500;
-    }
+    .stat-label { font-size: 0.75rem; color: var(--muted); font-weight: 500; }
 
     /* ── ABOUT ── */
-    .about-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .about-photo-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 300px;
-    }
-
+    .about-inner { display: flex; flex-direction: column; gap: 2.5rem; }
+    .about-photo-wrap { position: relative; width: 100%; max-width: 300px; }
     .about-photo {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 16px;
-      display: block;
+      width: 100%; aspect-ratio: 1/1; object-fit: cover;
+      object-position: center top; border-radius: 16px; display: block;
     }
-
     .about-photo-accent {
-      position: absolute;
-      bottom: -12px;
-      right: -12px;
-      width: 80px;
-      height: 80px;
-      background: var(--yellow-dim);
-      border: 1px solid var(--yellow-border);
-      border-radius: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1px;
+      position: absolute; bottom: -12px; right: -12px;
+      width: 80px; height: 80px;
+      background: var(--yellow-dim); border: 1px solid var(--yellow-border);
+      border-radius: 14px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1px;
     }
-
     .about-photo-accent strong {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--yellow);
-      line-height: 1;
-      letter-spacing: -0.02em;
+      font-size: 1.4rem; font-weight: 700; color: var(--yellow);
+      line-height: 1; letter-spacing: -0.02em;
     }
-
     .about-photo-accent span {
-      font-size: 0.62rem;
-      color: var(--muted);
-      font-weight: 500;
-      text-align: center;
-      line-height: 1.3;
+      font-size: 0.62rem; color: var(--muted); font-weight: 500;
+      text-align: center; line-height: 1.3;
     }
-
     .about-content { flex: 1; }
-
-    .about-title {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      margin-bottom: 1rem;
-    }
-
-    .about-text {
-      font-size: 0.925rem;
-      color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 0.85rem;
-    }
-
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-    }
-
+    .about-title   { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 1rem; }
+    .about-text    { font-size: 0.925rem; color: var(--muted); line-height: 1.85; margin-bottom: 0.85rem; }
+    .about-tags    { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
     .about-tag {
-      background: var(--dark-3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-pill);
-      padding: 0.3rem 0.85rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text);
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: var(--radius-pill); padding: 0.3rem 0.85rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--text);
     }
 
     /* ── SERVICES ── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2.5rem; }
     .service-icon {
-      width: 40px; height: 40px;
-      background: var(--orange-dim);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.15rem;
-      margin-bottom: 0.9rem;
+      width: 40px; height: 40px; background: var(--orange-dim);
+      border-radius: var(--radius-sm); display: flex; align-items: center;
+      justify-content: center; font-size: 1.15rem; margin-bottom: 0.9rem;
     }
-
     .service-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
     .service-desc  { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
 
     /* ── STEPS ── */
     .steps-list { margin-top: 2.5rem; }
-
-    .step-item {
-      display: flex; gap: 1.25rem;
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .step-item  { display: flex; gap: 1.25rem; padding: 1.4rem 0; border-bottom: 1px solid var(--border); }
     .step-item:last-child { border-bottom: none; }
-
-    .step-num {
-      font-size: 1.55rem; font-weight: 700;
-      color: var(--yellow-border);
-      min-width: 38px; line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-
+    .step-num   { font-size: 1.55rem; font-weight: 700; color: var(--yellow-border); min-width: 38px; line-height: 1.1; letter-spacing: -0.02em; }
     .step-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem; }
     .step-desc  { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
 
     /* ── REVIEWS ── */
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-top: 2.5rem;
+    .reviews-grid  { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2.5rem; }
+    .review-stars  { color: var(--yellow); font-size: 0.78rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+    .review-text   { font-size: 0.865rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
+    .review-author { font-size: 0.78rem; font-weight: 600; color: var(--text); }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0; max-width: 780px; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+      padding: 1.2rem 0; background: none; border: none;
+      cursor: pointer; text-align: left;
+      font-family: var(--font); font-size: 0.95rem;
+      font-weight: 600; color: var(--text);
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--orange); }
+    .faq-question[aria-expanded="true"] { color: var(--orange); }
+
+    .faq-icon {
+      font-size: 1.3rem; font-weight: 300; color: var(--muted);
+      flex-shrink: 0; transition: transform 0.25s, color 0.2s;
+      line-height: 1; width: 22px; text-align: center;
+    }
+    .faq-question[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg); color: var(--orange);
     }
 
-    .review-stars { color: var(--yellow); font-size: 0.78rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
-    .review-text  { font-size: 0.865rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
-    .review-author{ font-size: 0.78rem; font-weight: 600; color: var(--text); }
+    .faq-answer {
+      padding-bottom: 1.2rem;
+    }
+    .faq-answer p {
+      font-size: 0.875rem; color: var(--muted); line-height: 1.8;
+    }
+    .faq-answer[hidden] { display: none; }
 
     /* ── CTA ── */
     .cta-section { text-align: center; position: relative; overflow: hidden; }
     .cta-section::before {
-      content: '';
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px; height: 350px;
-      background: radial-gradient(ellipse, rgba(255,92,26,0.07) 0%, transparent 70%);
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); width: 500px; height: 350px;
+      background: radial-gradient(ellipse, rgba(232,0,15,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
-    .cta-title {
-      font-size: clamp(1.7rem, 5vw, 2.9rem);
-      margin-bottom: 0.9rem;
-    }
-    .cta-desc {
-      font-size: 0.95rem; color: var(--muted);
-      max-width: 400px; margin: 0 auto 2rem; line-height: 1.8;
-    }
+    .cta-title { font-size: clamp(1.7rem, 5vw, 2.9rem); margin-bottom: 0.9rem; }
+    .cta-desc  { font-size: 0.95rem; color: var(--muted); max-width: 400px; margin: 0 auto 2rem; line-height: 1.8; }
 
     .sec-title { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 0.75rem; }
     .bg-alt    { background: var(--dark-2); }
 
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .wa-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
+    .wa-float svg   { width: 28px; height: 28px; fill: #fff; }
+
+    /* ── NAV SOCIAL ICONS ── */
+    .nav-socials { display: none; align-items: center; gap: 0.6rem; }
+    .nav-socials a {
+      width: 32px; height: 32px; border: 1px solid var(--border);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: var(--muted); transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-socials a:hover { border-color: var(--orange); color: var(--orange); }
+    .nav-socials svg { width: 15px; height: 15px; fill: currentColor; }
+
     /* ── TABLET ── */
     @media (min-width: 640px) {
-      .services-grid  { grid-template-columns: repeat(2, 1fr); }
-      .reviews-grid   { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid  { grid-template-columns: repeat(2, 1fr); }
+      .nav-socials   { display: flex; }
     }
 
     /* ── DESKTOP ── */
     @media (min-width: 900px) {
       .hero { padding-top: 7rem; padding-bottom: 5rem; }
-
-      .hero-inner {
-        flex-direction: row;
-        align-items: center;
-        gap: 4rem;
-      }
-
-      .hero-photo-wrap {
-        width: 420px;
-        max-width: 420px;
-        flex-shrink: 0;
-        margin: 0;
-      }
-
-      .stats-bar {
-        grid-template-columns: repeat(4, 1fr);
-      }
+      .hero-inner { flex-direction: row; align-items: center; gap: 4rem; }
+      .hero-photo-wrap { width: 420px; max-width: 420px; flex-shrink: 0; margin: 0; }
+      .stats-bar { grid-template-columns: repeat(3, 1fr); }
       .stat-item { border-bottom: none; }
-      .stat-item:nth-child(2n)     { border-right: 1px solid var(--border); }
-      .stat-item:last-child        { border-right: none; }
-
-      .about-inner {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 4rem;
-      }
-
-      .about-photo-wrap {
-        width: 320px;
-        flex-shrink: 0;
-      }
-
-      .services-grid  { grid-template-columns: repeat(3, 1fr); }
-      .reviews-grid   { grid-template-columns: repeat(3, 1fr); }
-      .steps-list     { max-width: 680px; }
+      .stat-item:nth-child(2n)  { border-right: 1px solid var(--border); }
+      .stat-item:last-child     { border-right: none; }
+      .about-inner { flex-direction: row; align-items: flex-start; gap: 4rem; }
+      .about-photo-wrap { width: 320px; flex-shrink: 0; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .reviews-grid  { grid-template-columns: repeat(3, 1fr); }
+      .steps-list    { max-width: 680px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- ── WHATSAPP FLUTUANTE ── -->
+  <a href="https://wa.me/5518997632365?text=Olá%20Giovani!%20Quero%20crescer%20no%20delivery."
+     class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ── NAV ── -->
   <header class="nav" role="banner">
     <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Giovani — Gestor de Delivery">Giovani<span>.</span></a>
+      <a href="/" class="nav-logo" aria-label="Giovani — Gestão de Delivery">
+        Giovani <span>|</span> <span class="nav-logo-sub">Gestão de Delivery</span>
+      </a>
+
       <nav class="nav-links" aria-label="Menu principal">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#processo">Como funciona</a>
         <a href="#resultados">Resultados</a>
+        <a href="#faq">FAQ</a>
       </nav>
+
+      <!-- social icons no header desktop -->
+      <div class="nav-socials" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/giovani.ifood/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/5518997632365" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+
       <a href="https://wa.me/5518997632365?text=Olá%20Giovani!%20Quero%20crescer%20no%20delivery."
-         class="btn btn-primary nav-cta"
-         target="_blank" rel="noopener noreferrer">Falar agora</a>
+         class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">Falar agora</a>
+
       <button class="nav-burger" id="burger"
               aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
         <span></span><span></span><span></span>
@@ -416,6 +298,7 @@
       <a href="#servicos">Serviços</a>
       <a href="#processo">Como funciona</a>
       <a href="#resultados">Resultados</a>
+      <a href="#faq">FAQ</a>
       <a href="https://wa.me/5518997632365?text=Olá%20Giovani!%20Quero%20crescer%20no%20delivery."
          target="_blank" rel="noopener noreferrer">💬 Falar no WhatsApp</a>
     </nav>
@@ -429,22 +312,18 @@
       <div class="container">
         <div class="hero-inner">
 
-          <!-- left: text -->
           <div class="hero-content">
             <div class="badge">
               <span class="badge-dot" aria-hidden="true"></span>
               Especialista em Delivery
             </div>
-
             <h1 class="hero-title">
               Seu restaurante <span class="text-orange">vendendo mais</span>
               em todas as plataformas.
             </h1>
-
             <p class="hero-desc">
-              Gestão profissional no iFood, Rappi e 99Food. Estratégia, otimização e resultados reais para donos de restaurante que querem crescer de verdade.
+              Gestão profissional no iFood, 99Food e Keeta. Estratégia, otimização e resultados reais para donos de restaurante que querem crescer de verdade.
             </p>
-
             <div class="hero-ctas">
               <a href="https://wa.me/5518997632365?text=Olá%20Giovani!%20Quero%20crescer%20no%20delivery."
                  class="btn btn-primary" target="_blank" rel="noopener noreferrer">
@@ -452,24 +331,24 @@
               </a>
               <a href="#sobre" class="btn btn-outline">Conhecer o Giovani</a>
             </div>
-
             <div class="platforms-row">
               <span class="platforms-label">Atuamos em</span>
-              <span class="platform-pill">iFood</span>
-              <span class="platform-pill">Rappi</span>
-              <span class="platform-pill">99Food</span>
+              <span class="platform-logo-pill ifood">
+                <img src="assets/logo-ifood.png" alt="iFood" />
+              </span>
+              <span class="platform-logo-pill food99">
+                <img src="assets/logo-99food.png" alt="99Food" />
+              </span>
+              <span class="platform-logo-pill keeta">
+                <img src="assets/logo-keeta.png" alt="Keeta" />
+              </span>
             </div>
           </div>
 
-          <!-- right: photo -->
           <div class="hero-photo-wrap reveal">
-            <img
-              src="assets/giovani.png"
-              alt="Giovani, especialista em gestão de delivery"
-              class="hero-photo"
-              width="420" height="525"
-              loading="eager"
-            />
+            <img src="assets/giovani.jpg"
+                 alt="Giovani, especialista em gestão de delivery"
+                 class="hero-photo" width="420" height="525" loading="eager" />
             <div class="photo-badge" aria-hidden="true">
               <div class="photo-badge-icon">🚀</div>
               <div class="photo-badge-text">
@@ -491,12 +370,8 @@
         <span class="stat-label">restaurantes atendidos</span>
       </div>
       <div class="stat-item reveal">
-        <strong class="stat-number">3</strong>
-        <span class="stat-label">plataformas gerenciadas</span>
-      </div>
-      <div class="stat-item reveal">
         <strong class="stat-number">+80%</strong>
-        <span class="stat-label">crescimento médio em vendas</span>
+        <span class="stat-label">crescimento médio em vendas em um trimestre</span>
       </div>
       <div class="stat-item reveal">
         <strong class="stat-number">5★</strong>
@@ -510,43 +385,35 @@
       <div class="container">
         <div class="about-inner">
 
-          <!-- photo col -->
           <div class="about-photo-wrap reveal">
-            <img
-              src="assets/giovani.png"
-              alt="Foto de Giovani"
-              class="about-photo"
-              width="320" height="320"
-              loading="lazy"
-            />
+            <img src="assets/giovani.jpg" alt="Foto de Giovani"
+                 class="about-photo" width="320" height="320" loading="lazy" />
             <div class="about-photo-accent" aria-hidden="true">
               <strong>80+</strong>
               <span>restaurantes<br>atendidos</span>
             </div>
           </div>
 
-          <!-- text col -->
           <div class="about-content reveal">
             <p class="section-label">Conheça o Giovani</p>
             <h2 class="about-title" id="sobre-title">
               O especialista por trás dos resultados.
             </h2>
             <p class="about-text">
-              Sou o Giovani, gestor de delivery com foco em iFood, Rappi e 99Food. Trabalho diretamente dentro das plataformas para fazer o seu restaurante aparecer mais, vender mais e fidelizar clientes.
+              Sou o Giovani, gestor de delivery com foco em iFood, 99Food e Keeta. Trabalho diretamente dentro das plataformas para fazer o seu restaurante aparecer mais, vender mais e fidelizar clientes.
             </p>
             <p class="about-text">
               Já passei pelos bastidores de mais de 80 restaurantes — dos pequenos negócios de bairro às operações de maior volume. Isso me deu uma visão prática e direta do que realmente funciona no delivery.
             </p>
             <p class="about-text">
-              Meu trabalho não é só configurar plataforma. É entender o seu negócio, montar uma estratégia real e acompanhar de perto os resultados semana a semana.
+              Meu trabalho não é só configurar plataforma. É entender o seu negócio, montar uma estratégia real e acompanhar de perto os resultados.
             </p>
-
             <div class="about-tags">
               <span class="about-tag">iFood</span>
-              <span class="about-tag">Rappi</span>
               <span class="about-tag">99Food</span>
-              <span class="about-tag">Gestão de anúncios</span>
-              <span class="about-tag">Otimização de cardápio</span>
+              <span class="about-tag">Keeta</span>
+              <span class="about-tag">Gestão de campanhas</span>
+              <span class="about-tag">Engenharia de cardápio</span>
               <span class="about-tag">Estratégia de crescimento</span>
             </div>
           </div>
@@ -569,33 +436,33 @@
         <div class="services-grid">
           <article class="card reveal">
             <div class="service-icon" aria-hidden="true">📋</div>
-            <h3 class="service-title">Otimização de cardápio</h3>
-            <p class="service-desc">Fotos, descrições e preços estratégicos para converter visitas em pedidos.</p>
+            <h3 class="service-title">Engenharia de cardápio</h3>
+            <p class="service-desc">Fotos, descrições e preços estratégicos para converter visitas em pedidos e maximizar o ticket médio.</p>
           </article>
           <article class="card reveal">
             <div class="service-icon" aria-hidden="true">🎯</div>
-            <h3 class="service-title">Gestão de anúncios</h3>
-            <p class="service-desc">Campanhas dentro das plataformas com ROI monitorado e ajuste contínuo.</p>
+            <h3 class="service-title">Gestão de campanhas</h3>
+            <p class="service-desc">Gerenciamos campanhas e cupons dentro das plataformas com ROI monitorado e ajustes contínuos para maximizar retorno.</p>
           </article>
           <article class="card reveal">
             <div class="service-icon" aria-hidden="true">⭐</div>
             <h3 class="service-title">Reputação e avaliações</h3>
-            <p class="service-desc">Estratégias para aumentar notas e gestão do relacionamento com clientes.</p>
+            <p class="service-desc">Estratégias para aumentar notas e gestão do relacionamento com clientes nas plataformas.</p>
           </article>
           <article class="card reveal">
             <div class="service-icon" aria-hidden="true">📊</div>
-            <h3 class="service-title">Relatórios semanais</h3>
-            <p class="service-desc">Ticket médio, conversão e taxa de retorno — dados claros toda semana.</p>
+            <h3 class="service-title">Relatórios periódicos</h3>
+            <p class="service-desc">Ticket médio, conversão e taxa de retorno — dados claros e organizados em relatórios periódicos.</p>
           </article>
           <article class="card reveal">
             <div class="service-icon" aria-hidden="true">🚀</div>
             <h3 class="service-title">Lançamento no delivery</h3>
-            <p class="service-desc">Ainda fora das plataformas? Configuração completa e estratégia de estreia.</p>
+            <p class="service-desc">Ainda fora das plataformas? Configuração completa e estratégia de estreia para começar vendendo.</p>
           </article>
           <article class="card reveal">
             <div class="service-icon" aria-hidden="true">💡</div>
             <h3 class="service-title">Consultoria estratégica</h3>
-            <p class="service-desc">Análise da concorrência e plano de ação personalizado para o seu nicho.</p>
+            <p class="service-desc">Análise da concorrência e plano de ação personalizado para o seu nicho e região.</p>
           </article>
         </div>
       </div>
@@ -613,7 +480,7 @@
           <div class="step-item reveal">
             <div class="step-num" aria-hidden="true">01</div>
             <div>
-              <h3 class="step-title">Diagnóstico gratuito</h3>
+              <h3 class="step-title">Diagnóstico prévio</h3>
               <p class="step-desc">Analisamos seu perfil nas plataformas e mapeamos perdas de receita e oportunidades imediatas.</p>
             </div>
           </div>
@@ -628,14 +495,14 @@
             <div class="step-num" aria-hidden="true">03</div>
             <div>
               <h3 class="step-title">Implementação completa</h3>
-              <p class="step-desc">Executamos cardápio, anúncios, promoções e reputação. Você acompanha em tempo real.</p>
+              <p class="step-desc">Executamos cardápio, campanhas, promoções e reputação. Você acompanha em tempo real.</p>
             </div>
           </div>
           <div class="step-item reveal">
             <div class="step-num" aria-hidden="true">04</div>
             <div>
               <h3 class="step-title">Crescimento contínuo</h3>
-              <p class="step-desc">Monitoramento constante, testes e ajustes semanais para resultados consistentes.</p>
+              <p class="step-desc">Monitoramento constante, testes e ajustes periódicos para resultados consistentes.</p>
             </div>
           </div>
         </div>
@@ -671,6 +538,82 @@
     </section>
 
 
+    <!-- ══ FAQ ══ -->
+    <section class="section bg-alt" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <p class="section-label">Dúvidas frequentes</p>
+        <h2 class="sec-title" id="faq-title">Perguntas frequentes.</h2>
+        <p class="text-muted" style="font-size:0.925rem; max-width:480px; line-height:1.8; margin-bottom:2.5rem;">
+          Respostas diretas para as dúvidas mais comuns de donos de restaurante.
+        </p>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span>O que é um gestor de delivery?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Um gestor de delivery é o profissional que cuida de toda a operação do seu restaurante dentro das plataformas como iFood, 99Food e Keeta. Isso inclui configurar e otimizar o cardápio, gerenciar campanhas, monitorar avaliações e interpretar os dados para aumentar suas vendas — enquanto você foca em cozinhar.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span>Quanto tempo leva para ver resultados?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Os primeiros resultados geralmente aparecem nas primeiras 2 a 4 semanas, com otimizações no cardápio e nas campanhas. Resultados mais expressivos de crescimento sustentável — como o aumento médio de 80% nas vendas — costumam se consolidar ao longo de um trimestre de trabalho consistente.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span>Você trabalha com iFood, 99Food e Keeta ao mesmo tempo?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Sim. A gestão pode ser feita em uma ou mais plataformas simultaneamente, de acordo com o perfil e os objetivos do seu restaurante. Estar presente em múltiplas plataformas aumenta o alcance e reduz a dependência de um único canal de vendas.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span>Meu restaurante precisa já estar cadastrado nas plataformas?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Não necessariamente. Se o seu restaurante ainda não está nas plataformas, fazemos o processo completo de cadastro, configuração inicial e lançamento estratégico. Se já está cadastrado, partimos direto para o diagnóstico prévio e otimização do que já existe.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span>O que é o diagnóstico prévio?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>O diagnóstico prévio é uma análise detalhada do seu perfil atual nas plataformas de delivery. Avaliamos cardápio, fotos, preços, avaliações, campanhas ativas e posicionamento frente à concorrência. Com isso, identificamos os principais pontos de perda de receita e as oportunidades imediatas de crescimento.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              <span>Como funciona a gestão de campanhas e cupons?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Criamos e gerenciamos campanhas pagas e cupons dentro das próprias plataformas (iFood Ads, por exemplo), monitorando o retorno sobre o investimento em tempo real. O objetivo é atrair novos clientes e reativar quem já pediu, sem comprometer a margem do seu negócio.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
     <!-- ══ CTA FINAL ══ -->
     <section class="section cta-section" aria-labelledby="cta-title">
       <div class="container">
@@ -679,11 +622,10 @@
           Pronto para vender mais<br>no delivery?
         </h2>
         <p class="cta-desc">
-          Diagnóstico gratuito, sem compromisso. Descubra o quanto seu restaurante está deixando de ganhar.
+          Diagnóstico prévio sem compromisso. Descubra o quanto seu restaurante está deixando de ganhar.
         </p>
         <a href="https://wa.me/5518997632365?text=Olá%20Giovani!%20Quero%20crescer%20no%20delivery."
-           class="btn btn-primary"
-           target="_blank" rel="noopener noreferrer"
+           class="btn btn-primary" target="_blank" rel="noopener noreferrer"
            style="font-size:0.95rem; padding:.88rem 2.2rem;">
           💬 Falar no WhatsApp
         </a>
@@ -693,18 +635,101 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- ── FOOTER ── -->
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 Giovani — Gestor de Delivery. Todos os direitos reservados.</p>
+      <p class="footer-copy">© 2026 Giovani | Gestão de Delivery. Todos os direitos reservados.</p>
       <div class="footer-socials">
         <a href="https://www.instagram.com/giovani.ifood/"
-           target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+           target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
         <a href="https://wa.me/5518997632365"
-           target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
+           target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
+
+  <!-- FAQ Schema — JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é um gestor de delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um gestor de delivery é o profissional que cuida de toda a operação do seu restaurante dentro das plataformas como iFood, 99Food e Keeta. Isso inclui configurar e otimizar o cardápio, gerenciar campanhas, monitorar avaliações e interpretar os dados para aumentar suas vendas — enquanto você foca em cozinhar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo leva para ver resultados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Os primeiros resultados geralmente aparecem nas primeiras 2 a 4 semanas, com otimizações no cardápio e nas campanhas. Resultados mais expressivos de crescimento sustentável — como o aumento médio de 80% nas vendas — costumam se consolidar ao longo de um trimestre de trabalho consistente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Você trabalha com iFood, 99Food e Keeta ao mesmo tempo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. A gestão pode ser feita em uma ou mais plataformas simultaneamente, de acordo com o perfil e os objetivos do seu restaurante. Estar presente em múltiplas plataformas aumenta o alcance e reduz a dependência de um único canal de vendas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Meu restaurante precisa já estar cadastrado nas plataformas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não necessariamente. Se o seu restaurante ainda não está nas plataformas, fazemos o processo completo de cadastro, configuração inicial e lançamento estratégico. Se já está cadastrado, partimos direto para o diagnóstico prévio e otimização do que já existe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é o diagnóstico prévio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O diagnóstico prévio é uma análise detalhada do seu perfil atual nas plataformas de delivery. Avaliamos cardápio, fotos, preços, avaliações, campanhas ativas e posicionamento frente à concorrência. Com isso, identificamos os principais pontos de perda de receita e as oportunidades imediatas de crescimento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona a gestão de campanhas e cupons?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Criamos e gerenciamos campanhas pagas e cupons dentro das próprias plataformas (iFood Ads, por exemplo), monitorando o retorno sobre o investimento em tempo real. O objetivo é atrair novos clientes e reativar quem já pediu, sem comprometer a margem do seu negócio."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Giovani | Gestão de Delivery",
+    "description": "Especialista em gestão de delivery no iFood, 99Food e Keeta. Mais de 80 restaurantes atendidos com crescimento médio de 80% nas vendas em um trimestre.",
+    "url": "https://giovanidelivery.com.br",
+    "telephone": "+5518997632365",
+    "sameAs": [
+      "https://www.instagram.com/giovani.ifood/"
+    ],
+    "areaServed": "Brasil",
+    "serviceType": "Gestão de Delivery"
+  }
+  </script>
 
   <script src="js/main.js" defer></script>
 
