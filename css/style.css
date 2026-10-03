@@ -227,3 +227,13 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; }
   .nav-burger { display: none; }
   .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; }
 }
+
+/* ── RESPOSTA RÁPIDA (AEO) ── */
+.answer-section { padding-top: 2.5rem; padding-bottom: 0; }
+.answer-box { background: var(--dark-2); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: 12px; padding: 1.25rem 1.4rem; }
+.answer-title { font-size: .72rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--orange); margin-bottom: .6rem; }
+.answer-box p { font-size: .925rem; color: var(--muted); line-height: 1.8; max-width: 860px; }
+.answer-box strong { color: var(--text); }
+
+/* <picture> não deve interferir no layout */
+picture { display: contents; }

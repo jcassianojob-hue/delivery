@@ -44,7 +44,7 @@ git push -u origin main
 
 ### 3. Domínio personalizado (opcional)
 
-No painel do Cloudflare Pages → **Custom domains** → adicione `giovanidelivery.com.br`.
+No painel do Cloudflare Pages → **Custom domains** → adicione `giovanigestordedelivery.com.br`.
 
 ---
 

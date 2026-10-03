@@ -1,0 +1,26 @@
+# Giovani | Gestão de Delivery
+
+> Serviço brasileiro de gestão profissional de delivery para restaurantes no iFood, 99Food e Keeta. Mais de 80 restaurantes atendidos, com crescimento médio de 80% nas vendas em um trimestre. CNPJ 66.536.854/0001-03.
+
+O Giovani é gestor de delivery e atua dentro das plataformas para fazer o restaurante aparecer mais, vender mais e fidelizar clientes. O primeiro passo é um diagnóstico prévio sem compromisso, solicitado pelo WhatsApp.
+
+## Páginas
+
+- [Home](https://giovanigestordedelivery.com.br/): apresentação, serviços, depoimentos e perguntas frequentes
+- [Ebook Do Zero ao Topo das Plataformas](https://giovanigestordedelivery.com.br/ebook): guia prático para vender mais no iFood, 99Food e Keeta (R$ 37,97, pagamento único, garantia de 7 dias)
+- [Versão completa para IAs](https://giovanigestordedelivery.com.br/llms-full.txt): resumo estendido do site em texto
+
+## Serviços
+
+- Engenharia de cardápio
+- Gestão de campanhas e cupons
+- Reputação e avaliações
+- Relatórios periódicos
+- Lançamento no delivery
+- Consultoria estratégica
+
+## Contato
+
+- WhatsApp: https://wa.me/5518997632365
+- Telefone: +55 18 99763-2365
+- Instagram: https://www.instagram.com/giovani.ifood/
