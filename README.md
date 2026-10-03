@@ -11,7 +11,11 @@ giovani-delivery/
 │   └── style.css       ← Design tokens, reset, componentes compartilhados
 ├── js/
 │   └── main.js         ← Nav mobile, scroll reveal, scripts compartilhados
-├── pages/              ← Páginas futuras (serviços, contato, etc.)
+├── fonts/              ← Plus Jakarta Sans hospedada localmente
+├── ebook.html          ← Página do ebook (/ebook)
+├── privacidade.html    ← Política de Privacidade (/privacidade)
+├── 404.html            ← Página de erro 404
+├── robots.txt · sitemap.xml · llms.txt · llms-full.txt  ← SEO / GEO / AEO
 ├── assets/
 │   └── icons/          ← Ícones e imagens
 ├── _redirects          ← Cloudflare Pages redirects
@@ -50,9 +54,9 @@ No painel do Cloudflare Pages → **Custom domains** → adicione `giovanigestor
 
 ## Adicionando novas páginas
 
-1. Crie o arquivo em `pages/nome-da-pagina.html`
+1. Crie o arquivo na raiz, por exemplo `nome-da-pagina.html` (URL: `/nome-da-pagina`)
 2. Copie a estrutura do `index.html` (nav + footer + scripts)
-3. Adicione o link na nav em todos os arquivos HTML
+3. Adicione o link na nav em todos os arquivos HTML e a URL no `sitemap.xml`
 
 ---
 
@@ -60,3 +64,14 @@ No painel do Cloudflare Pages → **Custom domains** → adicione `giovanigestor
 
 - Instagram: [@giovani.ifood](https://www.instagram.com/giovani.ifood/)
 - WhatsApp: +55 18 99763-2365
+
+---
+
+## Redirecionar www para o domínio principal
+
+No painel da Cloudflare: **Rules → Redirect Rules → Create rule**
+
+- **When:** Hostname equals `www.giovanigestordedelivery.com.br`
+- **Then:** Dynamic redirect → `concat("https://giovanigestordedelivery.com.br", http.request.uri.path)` → status **301** (preserve query string)
+
+Também é preciso que o DNS tenha um registro `www` (CNAME proxied) apontando para o projeto.

@@ -8,6 +8,7 @@ O Giovani é gestor de delivery e atua dentro das plataformas para fazer o resta
 
 - [Home](https://giovanigestordedelivery.com.br/): apresentação, serviços, depoimentos e perguntas frequentes
 - [Ebook Do Zero ao Topo das Plataformas](https://giovanigestordedelivery.com.br/ebook): guia prático para vender mais no iFood, 99Food e Keeta (R$ 37,97, pagamento único, garantia de 7 dias)
+- [Política de Privacidade](https://giovanigestordedelivery.com.br/privacidade): como os dados são tratados (LGPD)
 - [Versão completa para IAs](https://giovanigestordedelivery.com.br/llms-full.txt): resumo estendido do site em texto
 
 ## Serviços
